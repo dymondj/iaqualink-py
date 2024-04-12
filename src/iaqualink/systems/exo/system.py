@@ -30,6 +30,8 @@ class ExoSystem(AqualinkSystem):
     def __init__(self, aqualink: AqualinkClient, data: Payload):
         super().__init__(aqualink, data)
 
+        self.temp_unit: str = ""
+
     def __repr__(self) -> str:
         attrs = ["name", "serial", "data"]
         attrs = ["%s=%r" % (i, getattr(self, i)) for i in attrs]
